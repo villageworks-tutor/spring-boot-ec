@@ -57,8 +57,8 @@ public class AccountCountroller {
 		// ログインアカウント名をセッションスコープのログイン情報に設定
 		account.setName(name);
 		
-		// 商品一覧画面に遷移
-		return "items";
+		// URL「/items」に遷移：カテゴリーリスト、商品リストの取得処理を丸投げする
+		return "redirect:/items";
 	}
 
 }
