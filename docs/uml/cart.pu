@@ -1,0 +1,9 @@
+@startuml cart
+class Cart {
+	- items : List<Item>
+	+ getItems() : List<Item>
+	+ getTotal() : int
+	+ add(item : Item) : void
+	+ delete(itemId : Integer) : void
+}
+@enduml

@@ -8,8 +8,8 @@ rectangle System（必須課題） {
 		usecase "UC03：商品を検索する" as uc03
 	}
 	rectangle Cart機能群 as cart{
-		usecase "UC04：商品をカートに入れる" as uc04
-		usecase "UC05：カートの中を見る" as uc05
+		usecase "UC04：カートの中を見る" as uc04
+		usecase "UC05：商品をカートに入れる" as uc05
 		usecase "UC06：カートの商品を削除する" as uc06
 	}
 	rectangle 商品購入機能群 {

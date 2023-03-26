@@ -34,9 +34,9 @@ public class ItemController {
 		// リクエストパラメータによる商品リスト取得処理の分岐
 		List<Item> items = null;
 		if (categoryId == null) {
-			items = this.itemRepository.findAll();
+			items = itemRepository.findAll();
 		} else {
-			items = this.itemRepository.findByCategoryId(categoryId);
+			items = itemRepository.findByCategoryId(categoryId);
 		}
 		
 		// 取得した商品リストをリクエストスコープに登録
