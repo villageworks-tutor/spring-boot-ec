@@ -64,5 +64,18 @@ public class Cart {
 		}
 		return total;
 	}
+	
+	/**
+	 * 商品を削除する
+	 * @param itemId 削除する商品の商品ID
+	 */
+	public void delete(Integer itemId) {
+		for (Item item : this.itemList) {
+			if (item.getId() == itemId) {
+				this.itemList.remove(item);
+				break;
+			}
+		}
+	}
 
 }

@@ -33,6 +33,13 @@ public class CartController {
 		return "cart";
 	}
 	
+	/**
+	 * カートに商品を追加する
+	 * @param itemId   追加する商品の商品ID
+	 * @param quantity 追加する数量
+	 * @param model    リクエストスコープ
+	 * @return URL「/chart」に遷移
+	 */
 	@PostMapping("/cart/add")
 	public String addItem(
 			@RequestParam(name = "itemId", defaultValue = "") Integer itemId,
@@ -47,7 +54,25 @@ public class CartController {
 		cart.add(item);
 		
 		// カート画面に遷移
-		return "cart";
+		return "redirect:/cart";
+	}
+
+	/**
+	 * カートの商品を削除する
+	 * @param itemId 削除する商品の商品ID
+	 * @param model  リクエストスコープ
+	 * @return URL「/chart」に遷移
+	 */
+	@PostMapping("/cart/delete")
+	public String deleteItem(
+			@RequestParam("itemId") Integer itemId,
+			Model model) {
+		
+		// カート内の商品を削除
+		cart.delete(itemId);
+		
+		// カート画面に遷移
+		return "redirect:/cart";
 	}
 	
 }
