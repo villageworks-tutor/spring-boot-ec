@@ -2,59 +2,34 @@
 left to right direction
 actor "システム利用者" as usr
 rectangle System（必須課題） {
-	usecase "UC01：ログインする" as uc01
-	usecase "UC02：商品一覧を表示する" as uc02
-	usecase "UC03：商品を検索する" as uc03
-	usecase "UC04：商品を登録する" as uc04
+	rectangle 商品表示機能群 {
+		usecase "UC01：ログインする" as uc01
+		usecase "UC02：商品一覧を表示する" as uc02
+		usecase "UC03：商品を検索する" as uc03
+	}
+	rectangle Cart機能群 as cart{
+		usecase "UC04：商品をカートに入れる" as uc04
+		usecase "UC05：カートの中を見る" as uc05
+		usecase "UC06：カートの商品を削除する" as uc06
+	}
+	rectangle 商品購入機能群 {
+		usecase "UC07：購入者情報を入力する" as uc07
+		usecase "UC08：入力した情報を確認する" as uc08
+		usecase "UC09：購入処理を実行する" as uc09
+	}
 }
 note right of uc02 {
 	【追加課題】
 	一覧にカテゴリ名を表示する。
 }
 
-rectangle System（追加課題） {
-	usecase "UC11：商品一覧を並べ替える" as uc11
-	usecase "UC12：商品を価格検索する" as uc12
-	usecase "UC13：商品の情報を修正する" as uc13
-	usecase "UC14：商品を削除する" as uc14
-
-}
-
-note right of uc11
-	並べ替えフィールドは以下の通り：
-	　・商品名
-	　・価格
-	かつ降順・昇順の選択可。
-	並べ替えフィールドの値が同じ場合には、それ以外のフィールドで
-	の並べ替えはしない。
-end note
-
-note right of uc12
-	価格の範囲を指定して商品検索する。検索条件は以下の通り：
-	・条件-1：価格の範囲下限のみが指定されている場合は、その
-	　　　　　下限値以上の価格の商品を表示。
-	・条件-2：価格の範囲上限のみが指定されている場合は、その
-	　　　　　上限値以下の価格の商品を表示。
-	・条件-3：価格の範囲が加減、上限とも指定されている場合は、
-	　　　　　その下限値以上上限値以下の価格の商品を表示。
-end note
-
-note right of uc13
-	商品ID以外のフィールドを修正対象とする。
-end note
-
-note right of uc14
-	指定された商品を削除することができるものとし、対象商品は
-	複数選択できるものとする。
-	また、全削除もできるようにする。
-end note
-
 usr --> uc01
 usr --> uc02
 usr --> uc03
 usr --> uc04
-usr --> uc11
-usr --> uc12
-usr --> uc13
-usr --> uc14
+usr --> uc05
+usr --> uc06
+usr --> uc07
+usr --> uc08
+usr --> uc09
 @enduml
