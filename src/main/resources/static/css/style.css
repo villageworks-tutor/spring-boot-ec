@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/** サイト全体の基本スタイル */
+body {
+	color: dimgray;
+	background-color: #EFF0F7; /* 背景色 */
+	text-align: center; /* 文字揃え：中央寄せ */
+	min-width: 900px;   /* 最小幅 */
+}
+
+/** ヘッダー、ナビゲーションメニュー、フッター */
+header, nav, footer {
+	background-color: #45496A;
+	color: #FFFFFF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/** ヘッダー、ナビゲーション内リンク */
+header, nav a {
+	color: #FFFFFF;
+}
+
+/** 仕切り線 */
+hr {
+	border-top: 2px dash #7D8BAE;
+}
+
+/** メインコンテンツ */
+main {
+	background-color: #FFFFFF;
+	min-height: 50px;
+	padding: 20px;
+}
+
+/** テーブルスタイル */
+table {
+	margin: 3px auto;
+	min-width: 800px;
+	border: none #7D8BAE;
+	padding: 10px;
+}
+/** 表見出しセル */
+th {
+	background: #7D8BAE;
+	color: #FFFFFF;
+}
+/** データセル */
+td {
+	background-color: white;
+}
+
+/** 送信ボタン */
+button {
+	margin: 5px;
+	padding: 0.25rem;
+	background-color: #E5857B;
+	color: #FFFFFF;
+	border: none;
+	width: 150px;
+	cursor: pointer;
+}
+
+/** 送信ボタン（マウスオーバー時） */
+button:hover {
+	background-color: #F1B2B2;
+}
+
+/** アンカー */
+a:visited {
+	color: #FFFFFF;
+}
+
+/** エラーメッセージのスタイル */
+.error, .orderNumber {
+	color: tomato;
+}
