@@ -39,5 +39,18 @@ public class OrderController {
 		// 確認画面に遷移
 		return "orderConfirm";
 	}
+	
+	@PostMapping("/order")
+	public String complete(
+			@RequestParam("name") String name,
+			@RequestParam("address") String address,
+			@RequestParam("tel") String tel,
+			@RequestParam("email") String email,
+			Model model) {
+		
+		
+		return "ordered";
+		
+	}
 
 }
