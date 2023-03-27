@@ -29,9 +29,17 @@ public class AccountCountroller {
 	 * @return ログイン画面ファイルベース名
 	 */
 	@GetMapping({"/", "/login", "/logout"})
-	public String index() {
+	public String index(
+			@RequestParam(name = "error", defaultValue = "") String error,
+			Model model) {
 		// セッションスコープに登録されているログイン情報を破棄
 		session.invalidate();
+		
+		if (!error.isEmpty()) {
+			// ログインしていないユーザの場合：エラーメッセージをリクエストスコープに登録
+			model.addAttribute("message", "ログインしていません。");
+		}
+		
 		// ログイン画面に遷移
 		return "login";
 	}
