@@ -64,6 +64,15 @@ public class OrderController {
 		return "orderConfirm";
 	}
 	
+	/**
+	 * 注文処理を実行する
+	 * @param name    顧客名
+	 * @param address 住所
+	 * @param tel     電話番号
+	 * @param email   電子メールアドレス
+	 * @param model   リクエストスコープ
+	 * @return 注文完了画面ファイルベース名
+	 */
 	@PostMapping("/order")
 	public String complete(
 			@RequestParam("name") String name,
